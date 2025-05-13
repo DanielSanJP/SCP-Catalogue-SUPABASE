@@ -10,7 +10,7 @@ const SCPList = () => {
   const [scpSubjects, setScpSubjects] = useState([]);
   const [sortBy, setSortBy] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const { search } = useSearch();
+  const { search, setSearch } = useSearch();
 
   useEffect(() => {
     const fetchSubjects = async () => {
@@ -70,10 +70,20 @@ const SCPList = () => {
   return (
     <div className="SCPListContainer">
       <h2>SCP Database</h2>
-      <div className="FilterButtons">
-        <p>Filter by:</p>
-        <button onClick={() => setSortBy("item")}>Item</button>
-        <button onClick={() => setSortBy("class")}>Class</button>
+      <div className="Filters">
+        <div className="FilterButtons">
+          <p>Filter by:</p>
+          <button onClick={() => setSortBy("item")}>Item</button>
+          <button onClick={() => setSortBy("class")}>Class</button>
+        </div>
+        <div className="searchbar">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
       </div>
       <div className="SCPList">
         {paginatedSubjects.map((scp) => (

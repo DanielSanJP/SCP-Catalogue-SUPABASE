@@ -86,12 +86,34 @@ button {
   border-radius: 8px;
 }
 
+.Filters {
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .FilterButtons {
   display: flex;
   justify-content: flex-start;
   gap: 20px;
-  margin-bottom: 20px;
   align-items: center;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+}
+
+.searchbar input {
+  width: 250px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.searchbar button {
+  border-radius: 0px 10px 10px 0px;
 }
 
 .PaginationControls {
@@ -118,6 +140,10 @@ button {
 }
 
 @media screen and (max-width: 768px) {
+  .Filters {
+    flex-direction: column;
+    align-items: center;
+  }
   .SCPListContainer {
     padding: 20px 10px; /* Reduce padding to use more width */
   }

@@ -34,24 +34,8 @@
   list-style: none;
   gap: 20px;
   padding: 20px;
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 0 auto;
-}
-
-.searchbar {
-  display: flex;
-  align-items: center;
-}
-
-.searchbar input {
-  width: 250px;
-  height: 30px;
-  border-radius: 10px 0px 0px 10px;
-  padding: 4px;
-}
-
-.searchbar button {
-  border-radius: 0px 10px 10px 0px;
 }
 
 a {
@@ -62,7 +46,6 @@ a {
 @media screen and (max-width: 768px) {
   .top {
     flex-direction: column;
-    gap: 15px;
   }
   .navbarlinks {
     justify-content: center;

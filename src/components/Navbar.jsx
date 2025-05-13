@@ -1,27 +1,18 @@
 import "../styles/Navbar.css";
 import { Link } from "react-router-dom";
-import { useSearch } from "./SearchContextUtils";
 
 function Navbar() {
-  const { search, setSearch } = useSearch();
   return (
     <nav className="navbar">
       <div className="navbar-content">
         <div className="top">
-          <img
-            src="/SCP-LOGO.png"
-            alt="SCP Logo"
-            style={{ width: "300px", height: "auto", marginBottom: "20px" }}
-          />
-          <div className="searchbar">
-            <input
-              type="text"
-              placeholder="Search..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
+          <Link to="/">
+            <img
+              src="/SCP-LOGO.png"
+              alt="SCP Logo"
+              style={{ width: "300px", height: "auto", marginBottom: "20px" }}
             />
-            <button disabled>Search</button>
-          </div>
+          </Link>
         </div>
       </div>
       <div className="navbar-links-container">
