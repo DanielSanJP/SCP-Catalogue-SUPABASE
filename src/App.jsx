@@ -1,17 +1,23 @@
-import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
 import SCPList from "./components/SCPList";
+import { SearchProvider } from "./components/SearchContext";
 import "./styles/App.css";
 
 function App() {
   return (
-    <div className="App">
-      <img
-        src="/SCP-LOGO.png"
-        alt="SCP Logo"
-        style={{ width: "300px", height: "auto", marginBottom: "20px" }}
-      />
-      <SCPList />
-    </div>
+    <SearchProvider>
+      <BrowserRouter>
+        <Navbar />
+        <div className="app">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/scplist" element={<SCPList />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </SearchProvider>
   );
 }
 
