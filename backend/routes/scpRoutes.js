@@ -1,7 +1,7 @@
 import express from "express";
 import {
   getAllSubjects,
-  getSubjectByItem,
+  getSubjectById,  // renamed from getSubjectByItem
   createSubject,
   updateSubject,
   deleteSubject,
@@ -10,9 +10,9 @@ import {
 const router = express.Router();
 
 router.get("/", getAllSubjects);
-router.get("/:item", getSubjectByItem);
+router.get("/:id", getSubjectById);  // changed from /:item
 router.post("/", createSubject);
-router.put("/:item", updateSubject);
-router.delete("/:item", deleteSubject);
+router.put("/:id", updateSubject);  // changed from /:item
+router.delete("/:id", deleteSubject);  // changed from /:item
 
 export default router;
