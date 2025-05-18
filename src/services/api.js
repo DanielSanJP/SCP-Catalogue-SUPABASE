@@ -1,4 +1,5 @@
-const API_URL = "/api/scp";
+// Use environment variables for API URL if available, otherwise fallback to relative path
+const API_URL = import.meta.env.VITE_API_URL || "/api/scp";
 import { supabase } from "./supabaseClient";
 
 export const getAllSubjects = async () => {

@@ -1,14 +1,13 @@
 import { createClient } from "@supabase/supabase-js";
-import process from 'process';
 
-// Use environment variables from your .env file
-// For Create React App, prefix them with REACT_APP_
-// For Vite, prefix them with VITE_
-const supabaseUrl = import.meta.env?.VITE_SUPABASE_URL || process.env.REACT_APP_SUPABASE_URL;
-const supabaseKey = import.meta.env?.VITE_SUPABASE_KEY || process.env.REACT_APP_SUPABASE_KEY;
+// Use environment variables from your .env file with Vite's import.meta.env
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
-  console.error("Supabase URL and Key must be provided in environment variables.");
+  console.error(
+    "Supabase URL and Anon Key must be provided in .env file with VITE_ prefix."
+  );
 }
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
