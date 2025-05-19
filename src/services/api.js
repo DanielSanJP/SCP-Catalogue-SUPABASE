@@ -1,6 +1,5 @@
-// Use environment variables for API URL if available, otherwise use Railway URL
+// Always use the Railway URL for API calls
 const API_URL =
-  import.meta.env.VITE_API_URL ||
   "https://scp-catalogue-supabase-production.up.railway.app/api/scp";
 import { supabase } from "./supabaseClient";
 
