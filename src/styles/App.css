@@ -1,19 +1,26 @@
+/* =================================
+   APP.CSS - Main Application Styles
+   ================================= */
+
+/* Body styles - sets the outer background color */
 body {
-  background-color: #000000;
+  background-color: #000000; /* Pure black background for SCP theme */
 }
 
+/* Root container - wraps the entire React application */
 #root {
-  background-color: #1a1a1a;
-  width: 100%;
-  display: block;
-  overflow-x: hidden;
+  background-color: #1a1a1a; /* Dark gray background for main content area */
+  width: 100%; /* Full viewport width */
+  display: block; /* Block display to stack vertically */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Main app container - centers content and provides consistent layout */
 .app {
-  max-width: 1280px;
-  margin: 0 auto;
-  width: calc(100% - 40px);
-  min-height: 80vh;
-  padding: 20px;
-  box-sizing: border-box;
+  max-width: 1280px; /* Maximum width for large screens */
+  margin: 0 auto; /* Center horizontally */
+  width: calc(100% - 40px); /* Full width minus 20px padding on each side */
+  min-height: 80vh; /* Minimum height to fill most of viewport */
+  padding: 20px; /* Internal spacing around content */
+  box-sizing: border-box; /* Include padding in width calculation */
 }

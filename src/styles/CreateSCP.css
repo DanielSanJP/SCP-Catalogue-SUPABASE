@@ -1,173 +1,331 @@
+/* ==========================================
+   CREATE SCP CSS - SCP Entry Creation Form
+   ========================================== */
+
+/* Main container for the create SCP page */
 .create-scp {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically if space available */
+  max-width: 800px; /* Limit form width for readability */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Internal spacing */
 }
 
+/* Page heading styling */
 .create-scp h2 {
-  margin-bottom: 20px;
-  color: #0a995b;
+  margin-bottom: 20px; /* Space below heading */
+  color: #0a995b; /* SCP Foundation green color */
 }
 
+/* Form container - stacks all form elements */
 form {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 15px;
+  flex-direction: column; /* Stack form fields vertically */
+  width: 100%; /* Take full container width */
+  gap: 15px; /* Consistent spacing between form fields */
 }
 
+/* Individual form field wrapper */
 .scp-form-field {
-  margin-bottom: 15px;
-  width: 100%;
+  margin-bottom: 15px; /* Space below each field */
+  width: 100%; /* Full width of form */
 }
 
+/* Form field labels */
 .scp-form-field label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #e0e0e0;
+  display: block; /* Take full width, force line break */
+  margin-bottom: 8px; /* Space between label and input */
+  font-weight: bold; /* Make labels stand out */
+  color: #e0e0e0; /* Light gray text for dark theme */
 }
 
-/* Style for all input elements */
-.scp-form-field input,
-input,
+/* Required field indicator */
+.required {
+  color: #dc3545; /* Red color for required asterisk */
+}
+
+/* Help text styling */
+.help-text {
+  display: block; /* Block display for full width */
+  margin-top: 5px; /* Space above help text */
+  font-size: 0.875rem; /* Slightly smaller font size */
+  color: #999; /* Gray color for help text */
+  font-style: italic; /* Italic style for distinction */
+}
+
+/* ========================
+   SCP NUMBER INPUT STYLING
+   ======================== */
+
+/* Container for SCP number input with prefix */
+.scp-number-input {
+  display: flex; /* Use flexbox for inline layout */
+  align-items: center; /* Center items vertically */
+  border: 1px solid #444; /* Border around entire input group */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #333; /* Dark gray background */
+  overflow: hidden; /* Prevent border radius issues */
+}
+
+/* SCP- prefix styling */
+.scp-prefix {
+  background-color: #444; /* Slightly darker background for prefix */
+  color: #0a995b; /* SCP green color for prefix */
+  padding: 12px; /* Match input padding */
+  font-weight: bold; /* Bold text for emphasis */
+  border-right: 1px solid #555; /* Separator between prefix and input */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Number input field (without SCP- prefix) */
+.scp-number-input input {
+  border: none; /* Remove border since container has border */
+  background-color: transparent; /* Transparent to show container background */
+  color: white; /* White text */
+  padding: 12px; /* Internal spacing */
+  font-size: 1rem; /* Standard font size */
+  font-family: inherit; /* Use parent font family */
+  flex: 1; /* Take remaining space */
+  outline: none; /* Remove default outline */
+}
+
+/* Focus state for the entire SCP number input */
+.scp-number-input:focus-within {
+  border-color: #0a995b; /* SCP green border on focus */
+  box-shadow: 0 0 0 2px rgba(10, 153, 91, 0.3); /* Subtle green glow */
+}
+
+/* SCP preview styling */
+.scp-preview {
+  margin-top: 8px; /* Space above preview */
+  padding: 8px 12px; /* Internal spacing */
+  background-color: rgba(10, 153, 91, 0.1); /* Very light green background */
+  border: 1px solid rgba(10, 153, 91, 0.3); /* Light green border */
+  border-radius: 4px; /* Rounded corners */
+  color: #0a995b; /* SCP green text */
+  font-size: 0.9rem; /* Slightly smaller font */
+}
+
+/* Universal input styling - applies to other form inputs */
+.scp-form-field input:not(.scp-number-input input),
+input:not(.scp-number-input input),
 textarea,
 .scp-form-field select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #444;
-  border-radius: 4px;
-  background-color: #333;
-  color: white;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%; /* Full width of parent container */
+  padding: 12px; /* Internal spacing for comfortable interaction */
+  border: 1px solid #444; /* Subtle gray border */
+  border-radius: 4px; /* Slightly rounded corners */
+  background-color: #333; /* Dark gray background */
+  color: white; /* White text for contrast */
+  font-size: 1rem; /* Standard readable font size */
+  font-family: inherit; /* Use parent font family */
+  transition: border-color 0.2s, box-shadow 0.2s; /* Smooth focus transitions */
 }
 
-/* Override height for textarea */
+/* Textarea specific height override */
 textarea {
-  min-height: 120px;
-  resize: vertical;
+  min-height: 120px; /* Minimum height for multi-line content */
+  resize: vertical; /* Allow vertical resizing only */
 }
 
-/* Focus states for all input elements */
-.scp-form-field input:focus,
-input:focus,
+/* Focus states for better accessibility and UX */
+.scp-form-field input:not(.scp-number-input input):focus,
+input:not(.scp-number-input input):focus,
 textarea:focus,
 .scp-form-field select:focus {
-  outline: none;
-  border-color: #0a995b;
-  box-shadow: 0 0 0 2px rgba(10, 153, 91, 0.3);
+  outline: none; /* Remove default browser outline */
+  border-color: #0a995b; /* SCP green border on focus */
+  box-shadow: 0 0 0 2px rgba(10, 153, 91, 0.3); /* Subtle green glow */
 }
 
-/* Select specific styling */
+/* Custom select dropdown styling */
 .scp-form-field select {
-  appearance: none; /* Removes default styling */
+  appearance: none; /* Remove default browser dropdown styling */
+  /* Custom dropdown arrow using inline SVG */
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 10px center;
+  background-repeat: no-repeat; /* Don't repeat the arrow */
+  background-position: right 10px center; /* Position arrow on right side */
 }
 
+/* Select dropdown options styling */
 .scp-form-field select option {
-  background-color: #333;
-  color: white;
+  background-color: #333; /* Dark background for dropdown options */
+  color: white; /* White text for options */
 }
 
-/* Image upload section */
+/* ========================
+   IMAGE UPLOAD SECTION
+   ======================== */
+
+/* Image upload field container */
 .image-upload {
-  width: 100%;
+  width: 100%; /* Full width of form */
 }
 
+/* Image upload label */
 .image-upload label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #e0e0e0;
+  display: block; /* Take full width */
+  margin-bottom: 8px; /* Space below label */
+  font-weight: bold; /* Make label stand out */
+  color: #e0e0e0; /* Light gray text */
 }
 
+/* File input styling */
 .image-upload input[type="file"] {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  border: 1px dashed #444;
-  border-radius: 4px;
-  background-color: #2a2a2a;
-  margin-bottom: 10px;
-  cursor: pointer;
+  display: block; /* Block display for full width */
+  width: 100%; /* Full width of container */
+  padding: 10px; /* Internal spacing */
+  border: 1px dashed #444; /* Dashed border to indicate drag-and-drop area */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #2a2a2a; /* Slightly darker background */
+  margin-bottom: 10px; /* Space below file input */
+  cursor: pointer; /* Pointer cursor to indicate clickable */
 }
 
+/* File input hover state */
 .image-upload input[type="file"]:hover {
-  border-color: #0a995b;
+  border-color: #0a995b; /* Green border on hover */
 }
 
-/* Image preview */
+/* Image preview container */
 .image-preview {
-  width: 100%;
-  max-width: 400px;
-  height: 300px;
-  margin: 15px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid #444;
-  background-color: #2a2a2a;
+  width: 100%; /* Full width of container */
+  max-width: 400px; /* Limit maximum width */
+  height: 300px; /* Fixed height for consistent layout */
+  margin: 15px auto; /* Center horizontally with vertical spacing */
+  display: flex; /* Flexbox for centering image */
+  align-items: center; /* Center image vertically */
+  justify-content: center; /* Center image horizontally */
+  overflow: hidden; /* Hide any overflow from large images */
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #444; /* Subtle border */
+  background-color: #2a2a2a; /* Dark background */
+  position: relative; /* For positioning remove button */
 }
 
+/* Preview image styling */
 .image-preview img {
-  width: 100%;
-  height: 100%;
-  object-position: center;
-  object-fit: contain;
+  width: 100%; /* Full width of container */
+  height: 100%; /* Full height of container */
+  object-position: center; /* Center the image */
+  object-fit: contain; /* Maintain aspect ratio, fit within container */
 }
 
+/* Remove image button */
+.remove-image-btn {
+  position: absolute; /* Position over the image */
+  top: 10px; /* Distance from top */
+  right: 10px; /* Distance from right */
+  background-color: rgba(
+    220,
+    53,
+    69,
+    0.9
+  ); /* Semi-transparent red background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 5px 10px; /* Small padding */
+  font-size: 0.8rem; /* Smaller font size */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.2s; /* Smooth color transition */
+}
+
+/* Remove button hover state */
+.remove-image-btn:hover {
+  background-color: rgba(220, 53, 69, 1); /* Solid red on hover */
+}
+
+/* ========================
+   SUBMIT BUTTON
+   ======================== */
+
+/* Main submit button styling */
 .SubmitSCPButton {
-  padding: 12px 24px;
-  background-color: #0a995b;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  margin-top: 10px;
-  width: 200px;
-  align-self: center;
+  padding: 12px 24px; /* Comfortable padding for button */
+  background-color: #0a995b; /* SCP Foundation green */
+  color: white; /* White text for contrast */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1rem; /* Standard readable font size */
+  font-weight: bold; /* Bold text for emphasis */
+  cursor: pointer; /* Pointer cursor to indicate clickable */
+  transition: background-color 0.2s; /* Smooth color transition */
+  margin-top: 10px; /* Space above button */
+  width: 200px; /* Fixed width for consistency */
+  align-self: center; /* Center the button in flex container */
 }
 
-button[type="submit"]:hover {
-  background-color: #0b8c50;
+/* Submit button hover state */
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #0b8c50; /* Slightly darker green on hover */
 }
 
+/* Submit button disabled state */
 button[type="submit"]:disabled {
-  background-color: #666;
-  cursor: not-allowed;
+  background-color: #666; /* Gray background when disabled */
+  cursor: not-allowed; /* Show not-allowed cursor */
 }
 
-/* Messages */
+/* ========================
+   MESSAGE STYLING
+   ======================== */
+
+/* Base styling for success and error messages */
 .success-message,
 .error-message {
-  padding: 12px;
-  margin: 15px 0;
-  border-radius: 4px;
-  text-align: center;
-  width: 100%;
+  padding: 12px; /* Internal spacing */
+  margin: 15px 0; /* Vertical spacing around messages */
+  border-radius: 4px; /* Rounded corners */
+  text-align: center; /* Center align text */
+  width: 100%; /* Full width of container */
 }
 
+/* Success message styling */
 .success-message {
-  background-color: rgba(10, 153, 91, 0.2);
-  color: #0a995b;
-  border: 1px solid #0a995b;
+  background-color: rgba(
+    10,
+    153,
+    91,
+    0.2
+  ); /* Semi-transparent green background */
+  color: #0a995b; /* SCP green text */
+  border: 1px solid #0a995b; /* Green border */
 }
 
+/* Error message styling */
 .error-message {
-  background-color: rgba(220, 53, 69, 0.2);
-  color: #dc3545;
-  border: 1px solid #dc3545;
+  background-color: rgba(
+    220,
+    53,
+    69,
+    0.2
+  ); /* Semi-transparent red background */
+  color: #dc3545; /* Red text */
+  border: 1px solid #dc3545; /* Red border */
+}
+
+/* ========================
+   RESPONSIVE DESIGN
+   ======================== */
+
+/* Mobile breakpoint adjustments */
+@media screen and (max-width: 480px) {
+  /* Adjust SCP number input for mobile */
+  .scp-prefix {
+    padding: 10px 8px; /* Smaller padding on mobile */
+    font-size: 0.9rem; /* Slightly smaller font */
+  }
+
+  .scp-number-input input {
+    padding: 10px 8px; /* Match prefix padding */
+  }
+
+  /* Smaller remove button on mobile */
+  .remove-image-btn {
+    font-size: 0.7rem; /* Even smaller font */
+    padding: 4px 8px; /* Smaller padding */
+  }
 }

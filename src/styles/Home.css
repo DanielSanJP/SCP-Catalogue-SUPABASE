@@ -1,7 +1,12 @@
+/* ===============================
+   HOME.CSS - Landing Page Styles
+   =============================== */
+
+/* Main home page container - hero section */
 .home {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  align-items: center;
-  text-align: center;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack content vertically */
+  padding: 20px; /* Internal spacing around content */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center align all text content */
 }

@@ -1,53 +1,70 @@
+/* =====================================
+   NAVBAR.CSS - Navigation Bar Styles
+   ===================================== */
+
+/* Main navbar container - full width header */
 .navbar {
-  width: 100%;
-  background: #222; /* or your desired background */
-  box-sizing: border-box;
+  width: 100%; /* Full viewport width */
+  background: #222; /* Dark gray background for header */
+  box-sizing: border-box; /* Include padding/border in width calculation */
 }
 
+/* Navbar content wrapper - centers content with max width */
 .navbar-content {
-  max-width: 1280px;
-  margin: 0 auto;
-  width: calc(100% - 40px);
-  padding: 0 20px; /* optional, for spacing */
-  box-sizing: border-box;
+  max-width: 1280px; /* Maximum width for large screens */
+  margin: 0 auto; /* Center horizontally */
+  width: calc(100% - 40px); /* Full width minus 20px padding on each side */
+  padding: 0 20px; /* Horizontal padding for content spacing */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
+/* Top section containing logo and main branding */
 .top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #222;
-  padding: 50px;
-  flex-direction: row;
-  max-width: 1280px;
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Distribute items across full width */
+  align-items: center; /* Center items vertically */
+  background-color: #222; /* Match navbar background */
+  padding: 50px; /* Generous padding around logo area */
+  flex-direction: row; /* Arrange items horizontally */
+  max-width: 1280px; /* Limit maximum width */
 }
 
+/* Navigation links container - darker background section */
 .navbar-links-container {
-  width: 100%;
-  background-color: #333;
+  width: 100%; /* Full width of navbar */
+  background-color: #333; /* Slightly darker than main navbar */
 }
 
+/* Navigation links list */
 .navbarlinks {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  list-style: none;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1180px;
-  margin: 0 auto;
+  display: flex; /* Use flexbox for horizontal layout */
+  flex-direction: row; /* Arrange links horizontally */
+  justify-content: flex-start; /* Align links to the left */
+  list-style: none; /* Remove default list bullets */
+  gap: 20px; /* Space between navigation links */
+  padding: 20px; /* Internal spacing around link area */
+  max-width: 1180px; /* Slightly less than navbar max-width for padding */
+  margin: 0 auto; /* Center the navigation links */
 }
 
+/* Navigation link styling */
 a {
-  color: white;
+  color: white; /* White text for visibility on dark background */
 }
 
-/* Media query for mobile devices */
+/* ========================
+   RESPONSIVE DESIGN
+   ======================== */
+
+/* Tablet and mobile breakpoint - screens smaller than 768px */
 @media screen and (max-width: 768px) {
+  /* Stack logo section vertically on smaller screens */
   .top {
-    flex-direction: column;
+    flex-direction: column; /* Change from row to column layout */
   }
+
+  /* Center navigation links on mobile */
   .navbarlinks {
-    justify-content: center;
+    justify-content: center; /* Center links instead of left-align */
   }
 }

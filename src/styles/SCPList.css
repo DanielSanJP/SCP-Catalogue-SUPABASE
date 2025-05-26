@@ -1,333 +1,443 @@
+/* ===========================================
+   SCP LIST CSS - SCP Database Display Styles
+   =========================================== */
+
+/* Button height override for consistent sizing */
 button {
-  height: fit-content;
+  height: fit-content; /* Allow button height to fit content naturally */
 }
 
+/* ========================
+   MAIN CONTAINER
+   ======================== */
+
+/* Main container for the SCP list page */
 .SCPListContainer {
-  gap: 20px;
-  padding: 40px;
-  text-align: center;
-  max-width: 1280px;
-  margin: 0 auto;
+  gap: 20px; /* Space between child elements */
+  padding: 40px; /* Internal spacing around entire container */
+  text-align: center; /* Center align text content */
+  max-width: 1280px; /* Maximum width for large screens */
+  margin: 0 auto; /* Center container horizontally */
 }
 
+/* ========================
+   SCP CARDS LAYOUT
+   ======================== */
+
+/* Container for SCP cards - responsive grid layout */
 .SCPList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  max-width: 100%;
+  display: flex; /* Use flexbox for card layout */
+  flex-direction: row; /* Arrange cards horizontally first */
+  flex-wrap: wrap; /* Allow cards to wrap to new lines */
+  justify-content: center; /* Center cards horizontally */
+  gap: 20px; /* Space between individual cards */
+  padding: 20px; /* Internal spacing around card area */
+  max-width: 100%; /* Don't exceed container width */
 }
 
+/* Individual SCP card styling */
 .SCPCard {
-  color: black;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #dddddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Make it responsive with percentage */
-  max-width: 1280px; /* Maximum width */
-  min-height: 400px; /* Set minimum height */
+  color: black; /* Dark text for light card background */
+  display: flex; /* Use flexbox for card internal layout */
+  flex-direction: column; /* Stack card content vertically */
+  gap: 10px; /* Space between card sections */
+  background-color: #dddddd; /* Light gray card background */
+  border-radius: 8px; /* Rounded corners for modern look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 100%; /* Responsive width based on container */
+  max-width: 1280px; /* Maximum card width */
+  min-height: 400px; /* Minimum height for consistent card sizes */
 }
 
+/* ========================
+   CARD HEADER
+   ======================== */
+
+/* Card header containing SCP number/class and edit button */
 .SCPCardHead {
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #bbbbbb;
-  padding: 5px 20px;
-  border-radius: 8px 8px 0px 0px;
+  display: flex; /* Use flexbox for header layout */
+  gap: 10px; /* Space between title and button */
+  justify-content: space-between; /* Push title and button to opposite ends */
+  align-items: center; /* Center items vertically */
+  background-color: #bbbbbb; /* Darker gray for header distinction */
+  padding: 5px 20px; /* Horizontal padding, minimal vertical */
+  border-radius: 8px 8px 0px 0px; /* Rounded top corners only */
 }
 
+/* ========================
+   CARD CONTENT LAYOUT
+   ======================== */
+
+/* Main content area of SCP card */
 .CardContent {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 20px; /* Reduced from 40px to give more space for content */
-  padding: 20px;
-  width: 100%;
-  box-sizing: border-box; /* Ensure padding doesn't add to width */
+  display: flex; /* Use flexbox for content layout */
+  flex-direction: row; /* Arrange image and text horizontally */
+  align-items: flex-start; /* Align items to top of container */
+  gap: 20px; /* Space between image and text content */
+  padding: 20px; /* Internal spacing around content */
+  width: 100%; /* Full width of card */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
+/* Text content section of card */
 .SCPCardDetails {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  flex: 1;
-  max-width: calc(100% - 320px); /* Account for image container + gap */
+  display: flex; /* Use flexbox for text layout */
+  flex-direction: column; /* Stack text elements vertically */
+  text-align: left; /* Left-align text for readability */
+  flex: 1; /* Take remaining space after image */
+  max-width: calc(
+    100% - 320px
+  ); /* Account for image width (300px) + gap (20px) */
 }
 
+/* Paragraph styling within card details */
 .SCPCardDetails p {
-  width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word; /* Help with very long words */
-  margin: 0 0 10px 0; /* Add spacing between paragraphs */
+  width: 100%; /* Full width of text container */
+  overflow-wrap: break-word; /* Break long words to prevent overflow */
+  word-break: break-word; /* Additional word breaking for very long words */
+  margin: 0 0 10px 0; /* Remove top margin, add bottom spacing */
 }
 
+/* ========================
+   IMAGE CONTAINER
+   ======================== */
+
+/* Container for SCP images */
 .ImageContainer {
-  width: 300px;
-  height: 300px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  width: 300px; /* Fixed width for consistent layout */
+  height: 300px; /* Fixed height for square aspect ratio */
+  flex-shrink: 0; /* Prevent container from shrinking */
+  display: flex; /* Use flexbox for image centering */
+  align-items: center; /* Center image vertically */
+  justify-content: center; /* Center image horizontally */
+  overflow: hidden; /* Hide any image overflow */
 }
 
+/* Image styling within container */
 .ImageContainer img {
-  width: 100%;
-  height: 100%;
-  object-position: top;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 100%; /* Full width of container */
+  height: 100%; /* Full height of container */
+  object-position: top; /* Position image from top when cropped */
+  object-fit: cover; /* Cover container while maintaining aspect ratio */
+  border-radius: 8px; /* Rounded corners for images */
 }
 
+/* ========================
+   FILTERS AND SEARCH
+   ======================== */
+
+/* Filter controls container */
 .Filters {
-  max-width: 1280px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  max-width: 1280px; /* Match main container width */
+  display: flex; /* Use flexbox for filter layout */
+  justify-content: space-between; /* Spread filters and search apart */
+  align-items: center; /* Center items vertically */
 }
 
+/* Filter buttons container */
 .FilterButtons {
-  display: flex;
-  justify-content: flex-start;
-  gap: 20px;
-  align-items: center;
+  display: flex; /* Use flexbox for button layout */
+  justify-content: flex-start; /* Align buttons to left */
+  gap: 20px; /* Space between filter buttons */
+  align-items: center; /* Center buttons vertically */
 }
 
+/* Search bar container */
 .searchbar {
-  display: flex;
-  align-items: center;
+  display: flex; /* Use flexbox for search layout */
+  align-items: center; /* Center search elements vertically */
 }
 
+/* Search input field */
 .searchbar input {
-  width: 250px;
-  height: 30px;
-  border-radius: 10px;
-  padding: 4px;
+  width: 250px; /* Fixed width for search input */
+  height: 30px; /* Fixed height for consistent appearance */
+  border-radius: 10px; /* Rounded corners for modern look */
+  padding: 4px; /* Internal spacing for text */
 }
 
+/* Search button (if present) */
 .searchbar button {
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 10px 10px 0px; /* Rounded right corners only */
 }
 
+/* ========================
+   PAGINATION
+   ======================== */
+
+/* Pagination controls container */
 .PaginationControls {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  margin-top: 20px;
+  display: flex; /* Use flexbox for pagination layout */
+  justify-content: center; /* Center pagination buttons */
+  gap: 5px; /* Small space between pagination buttons */
+  margin-top: 20px; /* Space above pagination */
 }
 
-/* Enhanced media queries for better responsiveness */
+/* ========================
+   RESPONSIVE DESIGN
+   ======================== */
+
+/* Large tablet breakpoint - screens smaller than 900px */
 @media screen and (max-width: 900px) {
+  /* Adjust card width for medium screens */
   .SCPCard {
-    width: 95%;
+    width: 95%; /* Slightly smaller width for better spacing */
   }
 
+  /* Reduce image size for medium screens */
   .ImageContainer {
-    width: 250px;
-    height: 250px;
+    width: 250px; /* Smaller image width */
+    height: 250px; /* Smaller image height */
   }
 
+  /* Adjust text area width to account for smaller image */
   .SCPCardDetails {
-    max-width: calc(100% - 270px);
+    max-width: calc(100% - 270px); /* Account for new image size + gap */
   }
 }
 
+/* Tablet breakpoint - screens smaller than 768px */
 @media screen and (max-width: 768px) {
+  /* Stack filter controls vertically */
   .Filters {
-    flex-direction: column;
-    align-items: center;
-  }
-  .SCPListContainer {
-    padding: 20px 10px; /* Reduce padding to use more width */
+    flex-direction: column; /* Change from row to column layout */
+    align-items: center; /* Center stacked items */
   }
 
+  /* Reduce container padding for smaller screens */
+  .SCPListContainer {
+    padding: 20px 10px; /* Less horizontal padding to maximize width */
+  }
+
+  /* Reduce list padding */
   .SCPList {
-    padding: 10px; /* Reduce padding to use more width */
+    padding: 10px; /* Minimal padding to maximize card space */
     gap: 15px; /* Smaller gap between cards */
   }
 
+  /* Full width cards on tablets */
   .SCPCard {
-    width: 100%; /* Take full width */
-    margin: 0; /* Remove any margin */
-    min-height: 300px; /* Slightly reduce minimum height */
+    width: 100%; /* Take full available width */
+    margin: 0; /* Remove any default margins */
+    min-height: 300px; /* Slightly smaller minimum height */
   }
 
+  /* Stack card content vertically on tablets */
   .CardContent {
-    flex-direction: column;
-    padding: 15px 10px; /* Reduce horizontal padding */
-    align-items: center;
+    flex-direction: column; /* Change from row to column layout */
+    padding: 15px 10px; /* Reduce padding for space efficiency */
+    align-items: center; /* Center stacked content */
   }
 
+  /* Remove horizontal margins from image container */
   .ImageContainer {
-    margin: 0 0 15px; /* Remove horizontal auto margin */
+    margin: 0 0 15px; /* Remove horizontal centering, add bottom margin */
   }
 
+  /* Full width text content on tablets */
   .SCPCardDetails {
-    max-width: 100%;
+    max-width: 100%; /* Use full available width */
   }
 }
 
+/* Mobile breakpoint - screens smaller than 480px */
 @media screen and (max-width: 480px) {
+  /* Minimal padding for mobile screens */
   .SCPListContainer {
-    padding: 15px 5px; /* Minimal padding */
+    padding: 15px 5px; /* Very minimal padding to maximize space */
   }
 
+  /* Minimal list padding for mobile */
   .SCPList {
-    padding: 5px;
-    gap: 10px;
+    padding: 5px; /* Minimal padding */
+    gap: 10px; /* Smaller gap between cards */
   }
 
+  /* Mobile card adjustments */
   .SCPCard {
-    min-height: 350px;
+    min-height: 350px; /* Slightly larger height for mobile readability */
     border-radius: 6px; /* Slightly smaller border radius */
   }
 
+  /* Reduced header padding for mobile */
   .SCPCardHead {
-    padding: 5px 10px;
+    padding: 5px 10px; /* Minimal header padding */
   }
 
+  /* Reduced content padding for mobile */
   .CardContent {
-    padding: 10px;
-    gap: 10px;
+    padding: 10px; /* Minimal content padding */
+    gap: 10px; /* Smaller gap between image and text */
   }
 
+  /* Smaller image size for mobile */
   .ImageContainer {
-    width: 230px; /* Slightly smaller height */
+    width: 230px; /* Reduced width for mobile screens */
   }
 }
 
-/* Modal styling */
+/* ========================
+   MODAL STYLING
+   ======================== */
+
+/* Modal overlay - covers entire screen */
 .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  position: fixed; /* Fixed positioning to cover viewport */
+  top: 0; /* Cover from top */
+  left: 0; /* Cover from left */
+  right: 0; /* Cover to right */
+  bottom: 0; /* Cover to bottom */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+  display: flex; /* Use flexbox for modal centering */
+  justify-content: center; /* Center modal horizontally */
+  align-items: center; /* Center modal vertically */
+  z-index: 1000; /* High z-index to appear above other content */
 }
 
+/* Edit modal container */
 .edit-modal {
-  background-color: #1a1a1a;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 600px;
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #1a1a1a; /* Dark background to match app theme */
+  border-radius: 8px; /* Rounded corners */
+  width: 90%; /* Responsive width */
+  max-width: 600px; /* Maximum width for readability */
+  max-height: 90vh; /* Maximum height to fit in viewport */
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+  padding: 20px; /* Internal spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Modal header styling */
 .modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  display: flex; /* Use flexbox for header layout */
+  justify-content: space-between; /* Push title and close button apart */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 20px; /* Space below header */
 }
 
+/* Modal close button */
 .close-button {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #555;
+  background: none; /* Remove default button background */
+  border: none; /* Remove default button border */
+  font-size: 1.5rem; /* Large size for easy clicking */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  color: #555; /* Gray color for close button */
 }
 
+/* ========================
+   MODAL FORM STYLING
+   ======================== */
+
+/* Form group container */
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Space between form groups */
 }
 
+/* Form group labels */
 .form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  display: block; /* Block display for full width */
+  margin-bottom: 5px; /* Space below label */
+  font-weight: bold; /* Bold text for labels */
 }
 
+/* Form inputs within modal */
 .form-group input,
 .form-group select,
 .form-group textarea {
-  width: 99%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: inherit;
+  width: 99%; /* Almost full width (account for border) */
+  padding: 8px; /* Internal spacing */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  font-family: inherit; /* Use parent font */
+  font-size: inherit; /* Use parent font size */
 }
 
+/* General input width override */
 div input {
-  width: 90%;
+  width: 90%; /* Slightly smaller width for inputs in divs */
 }
 
+/* ========================
+   IMAGE UPLOAD IN MODAL
+   ======================== */
+
+/* Image upload container in modal */
 .image-upload-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack elements vertically */
+  gap: 10px; /* Space between elements */
 }
 
+/* Current image display */
 .current-image {
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Space below current image */
 }
 
+/* ========================
+   MODAL FORM ACTIONS
+   ======================== */
+
+/* Form actions container */
 .form-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
+  display: flex; /* Use flexbox for button layout */
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Center buttons vertically */
+  gap: 10px; /* Space between action buttons */
+  margin-top: 20px; /* Space above button area */
 }
 
+/* Action buttons general styling */
 .form-actions button {
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 8px 16px; /* Comfortable padding for buttons */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor for interactivity */
 }
 
+/* Submit button styling */
 .form-actions button[type="submit"] {
-  background-color: #4caf50;
-  color: white;
-  border: none;
+  background-color: #4caf50; /* Green background for submit action */
+  color: white; /* White text for contrast */
+  border: none; /* Remove default border */
 }
 
+/* ========================
+   DELETE BUTTON STYLING
+   ======================== */
+
+/* Delete button base styling */
 .delete-button {
-  background-color: #f44336; /* Red color */
-  color: white;
-  border: none;
+  background-color: #f44336; /* Red background for destructive action */
+  color: white; /* White text for contrast */
+  border: none; /* Remove default border */
 }
 
+/* Delete button hover state */
 .delete-button:hover {
   background-color: #d32f2f; /* Darker red on hover */
 }
 
+/* Delete button disabled state */
 .delete-button:disabled {
   background-color: #ffcdd2; /* Light red when disabled */
-  cursor: not-allowed;
+  cursor: not-allowed; /* Show not-allowed cursor when disabled */
 }
 
+/* Delete button in confirmation state */
 .delete-button.confirm {
-  background-color: #ff3333;
-  color: white;
-  font-weight: bold;
+  background-color: #ff3333; /* Bright red for confirmation */
+  color: white; /* White text */
+  font-weight: bold; /* Bold text for emphasis */
 }
 
+/* Cancel button styling */
 .cancel-button {
-  background-color: #666;
-  color: white;
-  margin-left: 8px;
+  background-color: #666; /* Gray background for cancel action */
+  color: white; /* White text */
+  margin-left: 8px; /* Space to the left of cancel button */
 }
 
-/* Style when showing confirmation */
+/* Form actions in confirmation mode */
 .form-actions.confirming {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  display: flex; /* Maintain flexbox layout */
+  flex-direction: column; /* Stack confirmation buttons vertically */
+  gap: 8px; /* Smaller gap for confirmation buttons */
 }
